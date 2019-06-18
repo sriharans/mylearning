@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+    <xs:element name="books" type="booksType"/>
+    <xs:complexType name="compareType">
+        <xs:sequence>
+           <xs:any maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="phpType">
+        <xs:sequence>
+           <xs:any maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="nodejsType">
+        <xs:sequence>
+           <xs:any maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="catType">
+        <xs:sequence>
+            <xs:element type="javaType" name="java"/>
+            <xs:element type="phpType" name="php"/>
+            <xs:element type="pythonType" name="python"/>
+            <xs:element type="nodejsType" name="nodejs"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="pythonType">
+        <xs:sequence>
+           <xs:any maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="javaType">
+        <xs:sequence>
+           <xs:any maxOccurs="unbounded"/>
+
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="bookType">
+        <xs:sequence>
+            <xs:element type="catType" name="cat"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="booksType">
+        <xs:sequence>
+            <xs:element type="bookType" name="book"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
